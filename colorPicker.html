@@ -4,6 +4,47 @@
     <meta charset="UTF-8">
     <title>Adding & Removing Classes</title>
   <link href="style.css" rel="stylesheet" type="text/css">
+  <style>
+    .red{
+      background-color: red;
+    }
+    .green{
+      background-color: green;
+    }
+    .blue{
+      background-color: blue;
+    }
+    .pink{
+      color: pink;
+    }
+    .teal{
+      color: teal;
+    }
+    .purple {
+      color: purple;
+    }
+    .lavender {
+      color: lavender;
+    }
+    .cyan {
+      color:cyan;
+    }
+    .burlywood {
+      color: burlywood;
+    }
+    .cadetblue {
+      background-color: cadetblue;
+    }
+    .cornflowerblue {
+      background-color: cornflowerblue;
+    }
+    .lightblue {
+      background-color: lightblue;
+    }
+    .mistyrose {
+      color: mistyrose;
+    }
+  </style>
 </head>
 <body>
 
@@ -18,12 +59,18 @@
       <button id="1">RED</button>
       <button id="2">GREEN</button>
       <button id="3">BLUE</button>
+      <button id="4">CADETBLUE</button>
+      <button id="5">CORNFLOWERBLUE</button>
+      <button id="6">LIGHTBLUE</button>
     </div>
     <div class="row">
       <h3>Text</h3>
-      <button id="4">PINK</button>
-      <button id="5">TEAL</button>
-      <button id="6">PURPLE</button>
+      <button id="7">PINK</button>
+      <button id="8">TEAL</button>
+      <button id="9">PURPLE</button>
+      <button id="10">LAVENDER</button>
+      <button id="11">BURLYWOOD</button>
+      <button id="12">MISTYROSE</button>
     </div>
     <button id="clear">CLEAR</button>
   </div>
@@ -33,10 +80,17 @@
   const red = document.getElementById('1');
   const green = document.getElementById('2');
   const blue = document.getElementById('3');
+  const cadetblue = document.getElementById('4');
+  const cornflowerblue = document.getElementById('5');
+  const lightblue = document.getElementById('6')
 
-  const pink = document.getElementById('4');
-  const teal = document.getElementById('5');
-  const purple = document.getElementById('6');
+
+  const pink = document.getElementById('7');
+  const teal = document.getElementById('8');
+  const purple = document.getElementById('9');
+  const lavender = document.getElementById('10');
+  const burlywood = document.getElementById('11');
+  const mistyrose = document.getElementById('12');
 
   const clearButton = document.getElementById('clear')
 
@@ -50,10 +104,25 @@
     content.classList.add('green');
   });
 
-    blue.addEventListener('click', function(e) {
+  blue.addEventListener('click', function(e) {
       removeBGColor();
       content.classList.add('blue');
     });
+
+  cadetblue.addEventListener('click', function(e) {
+    removeBGColor();
+    content.classList.add('cadetblue');
+  });
+
+  cornflowerblue.addEventListener('click', function(e){
+    removeBGColor();
+    content.classList.add('cornflowerblue');
+  });
+
+  lightblue.addEventListener('click', function(e){
+    removeBGColor();
+    content.classList.add('lightblue');
+  });
 
   pink.addEventListener('click', function(e) {
     removeTextColor();
@@ -70,22 +139,45 @@
     content.classList.add('purple');
   });
 
+  lavender.addEventListener('click', function(e){
+    removeTextColor();
+    content.classList.add('lavender')
+  });
+
+  burlywood.addEventListener('click', function(e){
+    removeTextColor();
+    content.classList.add('burlywood')
+  });
+
+  mistyrose.addEventListener('click', function(e){
+    removeTextColor();
+    content.classList.add('mistyrose');
+  });
+
   function removeBGColor(){
     content.classList.remove('red');
     content.classList.remove('green');
     content.classList.remove('blue');
+    content.classList.remove('cadetblue');
+    content.classList.remove('cornflowerblue');
+    content.classList.remove('lightblue');
   }
 
   function removeTextColor(){
     content.classList.remove('pink');
     content.classList.remove('teal');
     content.classList.remove('purple');
+    content.classList.remove('lavender');
+    content.classList.remove('burlywood');
+    content.classList.remove('mistyrose');
   }
 
-  clearButton.addEventListener('click', function (e){
+  clearButton.addEventListener('click', clearStuff);
+
+  function clearStuff(){
     removeTextColor();
     removeBGColor();
-  });
+  }
 </script>
 </body>
 </html>
